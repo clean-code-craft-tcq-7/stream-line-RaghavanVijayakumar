@@ -1,33 +1,3 @@
-
-Skip to content
-Pull requests
-Issues
-Codespaces
-Marketplace
-Explore
-@RaghavanVijayakumar
-clean-code-craft-tcq-7 /
-stream-line-KeerthanaKuppuchamy
-Public
-generated from clean-code-craft-tcq-7/bms-stream
-
-Fork your own copy of clean-code-craft-tcq-7/stream-line-KeerthanaKuppuchamy
-
-Code
-Issues
-Pull requests 1
-Actions
-Projects
-Security
-
-    Insights
-
-stream-line-KeerthanaKuppuchamy/pom.xml
-Keerthana Kuppuchamy (SX/EAB1) Code changes
-Latest commit d671a96 Feb 14, 2023
-History
-0 contributors
-101 lines (101 sloc) 2.9 KB
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -129,20 +99,3 @@ History
 		</plugins>
 	</reporting>
 </project>
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-
-    Terms
-    Privacy
-    Security
-    Status
-    Docs
-    Contact GitHub
-    Pricing
-    API
-    Training
-    Blog
-    About
-
-stream-line-KeerthanaKuppuchamy/pom.xml at master · clean-code-craft-tcq-7/stream-line-KeerthanaKuppuchamy
