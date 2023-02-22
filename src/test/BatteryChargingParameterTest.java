@@ -1,8 +1,11 @@
 package test;
 
+<<<<<<< HEAD:src/test/BatteryChargingParameterTest.java
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
+=======
+>>>>>>> b8ae7a02dde3ee295cc71b807bf47e225a0c1025:src/sender/BatteryChargingParametersTest.java
 import org.junit.Test;
 
 import sender.BatteryChargingParameters;
