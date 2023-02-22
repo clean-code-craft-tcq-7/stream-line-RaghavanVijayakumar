@@ -13,7 +13,6 @@ public class BatteryChargingParameterTest {
             String expected = "Sending Battery/Charging parameters: " + params.getBatteryLevel() + " %, " + params.getChargingCurrent() + " A";
             DataSender.send(params);
             assertEquals(expected, captureOutput(()->DataSender.send(params)));
-            assertTrue(true);
         }
     }
 
