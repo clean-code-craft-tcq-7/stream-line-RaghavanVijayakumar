@@ -21,4 +21,5 @@ int maximumOfBatteryParameterReadings(std::vector<int> f_battery_parameter_readi
 
 int minimumOfBatteryParameterReadings(std::vector<int> f_battery_parameter_readings);
 
+int movingAverage(std::vector<int> f_battery_parameter_readings, int f_range_length);
 #endif

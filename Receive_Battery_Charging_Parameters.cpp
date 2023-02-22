@@ -65,3 +65,18 @@ int minimumOfBatteryParameterReadings(std::vector<int> f_battery_parameter_readi
 
   return f_battery_parameter_readings.front();
 }
+
+int movingAverage(std::vector<int> f_battery_parameter_readings, int f_range_length)
+{
+  if (f_battery_parameter_readings.size() > 5)
+  {
+    int sum = 0;
+    for (int i = (f_battery_parameter_readings.size() - (f_range_length + 1)); i < f_battery_parameter_readings.size();
+         i++)
+    {
+      sum += f_battery_parameter_readings.at(i);
+    }
+    return sum / f_range_length;
+  }
+  return 0;
+}
