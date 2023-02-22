@@ -31,20 +31,53 @@ TEST_CASE("Test case for checking number of Received Battery paramter")
 {
 }
 
+TEST_CASE("Test case for Separating Battery Parameters")
+{
+  int number_of_parameters = 2;
+  int position_of_paramter1{ 1 }, position_of_paramter2{ 2 };
+
+  std::vector<int> battery_parameter_readings = { 10, 20, 41, 52, 5, 2, 7, 58, 48, 5 };
+  std::vector<int> voltage_readings = { 10, 41, 5, 7, 48 };
+  std::vector<int> current_readings = { 20, 52, 2, 58, 5 };
+  REQUIRE(voltage_readings ==
+          separatingBatteryParameters(battery_parameter_readings, position_of_paramter1, number_of_parameters));
+  REQUIRE(current_readings ==
+          separatingCurrentParameters(battery_parameter_readings, position_of_paramter2, number_of_parameters));
+}
+
 TEST_CASE("Test case for max in given set of Battery paramters")
 {
+  int number_of_parameters = 2;
+  int position_of_paramter1{ 1 }, position_of_paramter2{ 2 };
   std::vector<int> battery_parameter_readings = { 10, 20, 41, 52, 5, 2, 7, 58, 48, 5 };
-  std::vector<int> expected_output = { 48, 58 };
-  REQUIRE(expected_output == maximumOfBatteryParameterReadings(received_string));
+  int expected_output1 = 48, expected_output1 = 58;
+
+  REQUIRE(expected_output1 == maximumOfBatteryParameterReadings(separatingBatteryParameters(
+                                  battery_parameter_readings, position_of_paramter1, number_of_parameters)));
+
+  REQUIRE(expected_output1 == maximumOfBatteryParameterReadings(separatingBatteryParameters(
+                                  battery_parameter_readings, position_of_paramter2, number_of_parameters)));
 }
 
 TEST_CASE("Test case for min in given set of Battery paramters")
 {
+  int number_of_parameters = 2;
+  int position_of_paramter1{ 1 }, position_of_paramter2{ 2 };
   std::vector<int> battery_parameter_readings = { 10, 20, 41, 52, 5, 2, 7, 58, 48, 5 };
-  std::vector<int> expected_output = { 5, 2 };
-  REQUIRE(expected_output == minimumOfBatteryParameterReadings(received_string));
+  int expected_output1 = 5, expected_output1 = 2;
+
+  REQUIRE(expected_output1 == minimumOfBatteryParameterReadings(separatingBatteryParameters(
+                                  battery_parameter_readings, position_of_paramter1, number_of_parameters)));
+
+  REQUIRE(expected_output1 == minimumOfBatteryParameterReadings(separatingBatteryParameters(
+                                  battery_parameter_readings, position_of_paramter2, number_of_parameters)));
 }
 
 TEST_CASE("Test case Moving Average ")
 {
+  int number_of_parameters = 2;
+  int position_of_paramter1{ 1 }, position_of_paramter2{ 2 };
+  std::vector<int> battery_parameter_readings = { 10, 20, 41, 52, 5, 2, 7, 58, 48, 5 };
+  int expected_output = 5;
+
 }

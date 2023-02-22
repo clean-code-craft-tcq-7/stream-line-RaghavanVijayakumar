@@ -40,3 +40,28 @@ bool isBatteryParameterWithinLimits(int f_variable, int f_minval, int f_max_val)
     return true;
   }
 }
+
+std::vector<int> separatingBatteryParameters(std::vector<int> f_battery_parameter_readings, int f_position_of_paramter,
+                                             int f_number_of_parameters)
+{
+  std::vector<int> extracted_battery_parameter_reading;
+  for (int i = (f_position_of_paramter - 1); i < f_battery_parameter_readings.size(); i += f_number_of_parameters)
+  {
+    extracted_battery_parameter_reading.push_back(f_battery_parameter_readings.at(i));
+  }
+  return extracted_battery_parameter_reading;
+}
+
+int maximumOfBatteryParameterReadings(std::vector<int> f_battery_parameter_readings)
+{
+  sort(f_battery_parameter_readings.begin(), f_battery_parameter_readings.end());
+
+  return f_battery_parameter_readings.back();
+}
+
+int minimumOfBatteryParameterReadings(std::vector<int> f_battery_parameter_readings)
+{
+  sort(f_battery_parameter_readings.begin(), f_battery_parameter_readings.end());
+
+  return f_battery_parameter_readings.front();
+}
