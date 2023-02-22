@@ -20,6 +20,11 @@ TEST_CASE("Test case for Received Battery paramter within limits")
 }
 TEST_CASE("Test case for string to vector")
 {
+    std::vector<int> expected_battery_parameter_readings = {10, 20, 41, 52};
+    int battery_current = 95;
+    std::string receivedString =
+        "Sending Battery/Charging parameters: 10 V, 20 A Sending Battery/Charging parameters: 41 V, 52 A";
+    REQUIRE(expected_battery_parameter_readings == batteryParameterReadingsFromString(receivedString));
 }
 
 TEST_CASE("Test case for checking number of Received Battery paramter")
