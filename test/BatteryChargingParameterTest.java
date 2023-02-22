@@ -1,15 +1,18 @@
-package sender;
-
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.Test;
-
+package test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class BatteryChargingParametersTest {
-    @Test
-    public void testGenerateAndSend() {
+import org.junit.Test;
+
+import sender.BatteryChargingParameters;
+import sender.DataGenerator;
+import sender.DataSender;
+
+class BatteryChargingParameterTest {
+
+	@Test
+	  public void testGenerateAndSend() {
         for (int i = 0; i < 50; i++) {
             BatteryChargingParameters params = DataGenerator.generate();
             String expected = "Sending Battery/Charging parameters: " + params.getBatteryLevel() + " %, " + params.getChargingCurrent() + " A";
@@ -28,7 +31,5 @@ public class BatteryChargingParametersTest {
         }
         return out.toString().trim();
     }
+
 }
-
-
-
