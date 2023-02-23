@@ -21,7 +21,6 @@ TEST_CASE("Test case for Received Battery paramter within limits")
 TEST_CASE("Test case for string to vector")
 {
   std::vector<int> expected_battery_parameter_readings = { 10, 20, 41, 52 };
-  int battery_current = 95;
   std::string received_string =
       "Sending Battery/Charging parameters: 10 V, 20 A Sending Battery/Charging parameters: 41 V, 52 A";
   REQUIRE(expected_battery_parameter_readings == batteryParameterReadingsFromString(received_string));
@@ -63,10 +62,13 @@ TEST_CASE("Test case Moving Average ")
 {
   std::vector<int> battery_parameter_readings1 = { 20, 52, 2, 58, 5 };
   std::vector<int> battery_parameter_readings2 = { 10, 41, 5, 7, 48, 5 };
-  int expected_output1 = 0, expected_output2 = 23;
+  std::vector<int> battery_parameter_readings3 = { 1, 5, 6, 45 };
+  int expected_output1 = 27, expected_output2 = 21, expected_output3 = 0;
   int range_length = 5;
 
   REQUIRE(expected_output1 == movingAverage(battery_parameter_readings1, range_length));
 
   REQUIRE(expected_output2 == movingAverage(battery_parameter_readings2, range_length));
+
+  REQUIRE(expected_output3 == movingAverage(battery_parameter_readings3, range_length));
 }
