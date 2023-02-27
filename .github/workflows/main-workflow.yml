@@ -28,6 +28,9 @@ jobs:
       
       - name: run receiver
       run: ./receiver
+      
+      -name: run sender
+      run: java BatterySimulator.java
 
 
       - name: Build and Generate coverage
